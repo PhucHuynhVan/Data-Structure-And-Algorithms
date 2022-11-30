@@ -7,7 +7,7 @@ def locate_card_liner_search(cards, query):
     while True:
         print(f"position: {position}")
         if not cards:
-            return "Empty cards"
+            return -1
         if cards[position] == query:
             return position
         position += 1
