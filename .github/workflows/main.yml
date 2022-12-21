@@ -21,6 +21,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Python Pylin GitHub Action
+        run: |
+            pylint array_sequences
       - name: Test with pytest
         run: |
           pytest

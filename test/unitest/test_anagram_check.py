@@ -1,5 +1,5 @@
 import pytest
-from Array_Sequences.Anagram_Check.Anagram_Check import anagram_check
+from array_sequences.anagram_check.anagram_check import anagram_check
 
 
 @pytest.mark.parametrize("str_1, str_2, out", [
