@@ -25,5 +25,5 @@ def anagram_check(str_1: str, str_2: str) -> bool:
 
 if __name__ == "__main__":
     print(anagram_check('dog', 'god'))
-    print(anagram_check('clint eastwood','old west action'))
-    print(anagram_check('dd','aa'))
+    print(anagram_check('clint eastwood', 'old west action'))
+    print(anagram_check('dd', 'aa'))
