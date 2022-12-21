@@ -1,7 +1,9 @@
+"""Sum pair solution"""
 from typing import List
 
 
 def sum_pair(arr: List[int], k: int):
+    """sum_pair func"""
     # The edge case
     if len(arr) < 2:
         return ""

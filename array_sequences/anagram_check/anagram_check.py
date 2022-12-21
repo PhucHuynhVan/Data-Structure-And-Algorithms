@@ -1,5 +1,9 @@
+"""Anagram check solution"""
+# pylint: disable=C0206
+
 
 def anagram_check(str_1: str, str_2: str) -> bool:
+    """anagram_check func"""
     str_1 = str_1.replace(" ", "").lower()
     str_2 = str_2.replace(" ", "").lower()
 
@@ -17,7 +21,7 @@ def anagram_check(str_1: str, str_2: str) -> bool:
         else:
             cnt[letter] = 1
     # Incase
-    for k in cnt:
-        if cnt[k] != 0:
+    for key in cnt:
+        if cnt[key] != 0:
             return False
     return True
