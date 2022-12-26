@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
       - name: Pylint check
         run: |
-          pylint array_sequences
+          pylint array_sequences stacks_queues_deques
       - name: Test with pytest
         run: |
           pytest
