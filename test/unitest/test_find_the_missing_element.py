@@ -1,5 +1,5 @@
 import pytest
-from array_sequences.find_the_missing_element.find_the_missing_element import finder
+from array_sequences.find_the_missing_element import finder
 
 
 @pytest.mark.parametrize("arr1, arr2, out", [

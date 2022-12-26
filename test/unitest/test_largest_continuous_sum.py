@@ -1,5 +1,5 @@
 import pytest
-from array_sequences.largest_continuous_sum.largest_continuous_sum import largest_continuous_sum
+from array_sequences.largest_continuous_sum import largest_continuous_sum
 
 
 @pytest.mark.parametrize("arr,  out", [

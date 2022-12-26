@@ -1,5 +1,5 @@
 import pytest
-from array_sequences.array_pair_sum.array_pair_sum import sum_pair
+from array_sequences.array_pair_sum import sum_pair
 
 
 @pytest.mark.parametrize("arr, k, out", [
