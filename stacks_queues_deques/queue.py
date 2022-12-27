@@ -13,7 +13,7 @@ class Queue:
 
     def enqueue(self, item):
         """Adds a new item to the rear of the queue"""
-        return self.items.insert(0, item)
+        self.items.insert(0, item)
 
     def dequeue(self):
         """Removes the front item from the queue."""
