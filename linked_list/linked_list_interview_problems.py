@@ -21,3 +21,17 @@ def singly_linked_list_cycle_check_func(node: Node) -> bool:
         if next_node == current_node:
             return True
     return False
+
+
+def singly_linked_list_reverse_func(node: Node) -> bool:
+    """Linked List Reversal - SOLUTION"""
+    current_node = node
+    previous_node = None
+
+    while current_node:
+        next_node = current_node.next_node
+        current_node.next_node = previous_node
+        previous_node = current_node
+        current_node = next_node
+
+    return previous_node
