@@ -35,3 +35,22 @@ def singly_linked_list_reverse_func(node: Node) -> bool:
         current_node = next_node
 
     return previous_node
+
+
+def linked_list_n_from_last_node_func(number_from_last: int, node: Node) -> Node:
+    """Linked List Nth to Last Node - SOLUTION"""
+    left_point = node
+    right_point = node
+
+    for _ in range(number_from_last-1):
+
+        if not right_point.next_node:
+            raise LookupError("Error: n is larger than the length of linked list.")
+
+        right_point = right_point.next_node
+
+    while right_point.next_node:
+        left_point = left_point.next_node
+        right_point = right_point.next_node
+
+    return left_point

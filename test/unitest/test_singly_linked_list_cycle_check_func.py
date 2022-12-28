@@ -3,6 +3,7 @@ from linked_list.linked_list_interview_problems import (
     Node,
     singly_linked_list_cycle_check_func,
     singly_linked_list_reverse_func,
+    linked_list_n_from_last_node_func,
 )
 
 
@@ -33,3 +34,16 @@ def test_singly_linked_list_reverse_func():
     assert d.next_node.value == c.value
     assert c.next_node.value == b.value
     assert b.next_node.value == a.value
+
+
+def test_linked_list_n_from_last_node():
+    a = Node(1)
+    b = Node(2)
+    c = Node(3)
+    d = Node(4)
+    e = Node(5)
+    a.next_node = b
+    b.next_node = c
+    c.next_node = d
+    d.next_node = e
+    assert linked_list_n_from_last_node_func(2, a).value == d.value
