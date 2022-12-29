@@ -1,4 +1,3 @@
-import pytest
 from linked_list.linked_list_interview_problems import (
     Node,
     singly_linked_list_cycle_check_func,
