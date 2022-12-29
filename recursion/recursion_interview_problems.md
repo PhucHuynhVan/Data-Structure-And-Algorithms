@@ -13,3 +13,8 @@
    For example, given s='abc' the function should return ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
 
    *Note: If a character is repeated, treat each occurence as distinct, for example an input of 'xxx' would return a list with 6 "versions" of 'xxx'*
+
+3. **Fibonnaci Sequence**
+   
+   Implement a ![Fibonnaci Sequence](https://en.wikipedia.org/wiki/Fibonacci_number)
+   
