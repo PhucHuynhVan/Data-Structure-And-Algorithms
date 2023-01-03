@@ -3,7 +3,8 @@ from recursion.recursion_interview_problems import (
     recursion_reverse_string_func,
     recursion_string_permutation_func,
     recursion_fibonnaci_sequence_func,
-    recursion_fibonnaci_sequence_dynamically_func,
+    fibonnaci_sequence_dynamically_func,
+    change_coin_dynamically_func,
 )
 
 
@@ -38,5 +39,14 @@ def test_recursion_fibonnaci_sequence_func(n, out):
     (1, 1),
     (23, 28657),
 ])
-def test_recursion_fibonnaci_sequence_dynamically_func(n, out):
-    assert recursion_fibonnaci_sequence_dynamically_func(n) == out
+def test_fibonnaci_sequence_dynamically_func(n, out):
+    assert fibonnaci_sequence_dynamically_func(n) == out
+
+
+@pytest.mark.parametrize("target, coins, out", [
+    (45, [1, 5, 10, 25], 3),
+    (23, [1, 5, 10, 25], 5),
+    (74, [1, 5, 10, 25], 8),
+])
+def test_change_coin_func(target, coins, out):
+    assert change_coin_dynamically_func(target, coins) == out
