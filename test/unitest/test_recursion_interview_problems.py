@@ -3,6 +3,7 @@ from recursion.recursion_interview_problems import (
     recursion_reverse_string_func,
     recursion_string_permutation_func,
     recursion_fibonnaci_sequence_func,
+    recursion_fibonnaci_sequence_dynamically_func,
 )
 
 
@@ -30,3 +31,12 @@ def test_recursion_string_permutation_func(str_input, out):
 ])
 def test_recursion_fibonnaci_sequence_func(n, out):
     assert recursion_fibonnaci_sequence_func(n) == out
+
+
+@pytest.mark.parametrize("n, out", [
+    (10, 55),
+    (1, 1),
+    (23, 28657),
+])
+def test_recursion_fibonnaci_sequence_dynamically_func(n, out):
+    assert recursion_fibonnaci_sequence_dynamically_func(n) == out

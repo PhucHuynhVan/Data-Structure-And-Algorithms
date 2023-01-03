@@ -28,3 +28,12 @@ def recursion_fibonnaci_sequence_func(number: int) -> int:
         return number
 
     return recursion_fibonnaci_sequence_func(number-1) + recursion_fibonnaci_sequence_func(number-2)
+
+
+def recursion_fibonnaci_sequence_dynamically_func(number: int) -> int:
+    """Fibonnaci Sequence Implementation"""
+    fib_cache = [0, 1]
+
+    for i in range(2, number + 1):
+        fib_cache.append(fib_cache[i - 1] + fib_cache[i - 2])
+    return fib_cache[number]
