@@ -3,6 +3,7 @@ from stacks_queues_deques.balanced_parentheses_check import balanced_parentheses
 
 
 @pytest.mark.parametrize("parens_str,  out", [
+    ('[[', False),
     ('[]', True),
     ('[](){([[[]]])}', True),
     ('()(){]}', False),
