@@ -1,4 +1,6 @@
 """Nodes and References Implementation of a Tree"""
+from typing import Type
+from stacks_queues_deques.stack import Stack
 # pylint: disable=too-few-public-methods
 
 
@@ -42,3 +44,18 @@ class BinaryTree:
     def get_root_val(self):
         """Get node value"""
         return self.val
+
+
+def binary_tree_traversal(tree: BinaryTree) -> Type[Stack]:
+    """Traversal the Binary Tree"""
+    result = Stack()
+    stacks = Stack()
+    stacks.push(tree)
+    while stacks.size() > 0:
+        current = stacks.pop()
+        result.push(current.val)
+        if current.right:
+            stacks.push(current.right)
+        if current.left:
+            stacks.push(current.left)
+    return result
