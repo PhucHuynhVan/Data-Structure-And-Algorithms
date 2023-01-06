@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
       - name: Pylint check
         run: |
-          pylint array_sequences stacks_queues_deques linked_list recursion
+          pylint array_sequences stacks_queues_deques linked_list recursion tree
       - name: Sleep for 30 seconds
         run: sleep 30s
         shell: bash
