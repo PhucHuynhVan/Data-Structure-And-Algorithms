@@ -18,7 +18,7 @@ jobs:
       - name: Create and start virtual environment
         run: |
           python${{ matrix.python-version }} -m venv venv
-          source env/bin/activate
+          source venv/Scripts/activate
       - name: Install dependencies
         run: |
           pip install --upgrade pip
