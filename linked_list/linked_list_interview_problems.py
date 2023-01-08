@@ -4,6 +4,7 @@
 
 class Node:
     """A node of an Linked List"""
+
     def __init__(self, value):
         self.value = value
         self.next_node = None
@@ -42,7 +43,7 @@ def linked_list_n_from_last_node_func(number_from_last: int, node: Node) -> Node
     left_point = node
     right_point = node
 
-    for _ in range(number_from_last-1):
+    for _ in range(number_from_last - 1):
 
         if not right_point.next_node:
             raise LookupError("Error: n is larger than the length of linked list.")

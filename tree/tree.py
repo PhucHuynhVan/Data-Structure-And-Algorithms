@@ -2,11 +2,13 @@
 from typing import Any
 from stacks_queues_deques.stack import Stack
 from stacks_queues_deques.queue import Queue
+
 # pylint: disable=too-few-public-methods
 
 
 class BinaryTree:
     """Nodes and References Implementation of a Tree"""
+
     def __init__(self, val):
         self.val = val
         self.left = None
@@ -119,4 +121,8 @@ def sum_binary_tree_recursion(tree: BinaryTree) -> int:
     """Sum of entire nodes in Binary Tree use recursion"""
     if tree is None:
         return 0
-    return tree.val + sum_binary_tree_recursion(tree.left) + sum_binary_tree_iterative(tree.right)
+    return (
+        tree.val
+        + sum_binary_tree_recursion(tree.left)
+        + sum_binary_tree_iterative(tree.right)
+    )

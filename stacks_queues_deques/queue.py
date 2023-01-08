@@ -4,6 +4,7 @@
 
 class Queue:
     """Implement a Queue"""
+
     def __init__(self):
         self.items = []
 

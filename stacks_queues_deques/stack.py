@@ -15,6 +15,7 @@ Return the size
 
 class Stack:
     """Implement a Stack"""
+
     def __init__(self):
         self.items = []
 

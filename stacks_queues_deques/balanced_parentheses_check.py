@@ -7,8 +7,8 @@ def balanced_parentheses_check_func(parens_str: str) -> bool:
         return False
 
     stack = []
-    opening_parens = set('([{')
-    pair_parens = {('(', ')'), ('[', ']'), ('{', '}')}
+    opening_parens = set("([{")
+    pair_parens = {("(", ")"), ("[", "]"), ("{", "}")}
 
     for paren in parens_str:
         if paren in opening_parens:

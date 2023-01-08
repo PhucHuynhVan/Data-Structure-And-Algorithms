@@ -4,6 +4,7 @@
 
 class Deque:
     """Implement Deque"""
+
     def __init__(self):
         self.items = []
 
