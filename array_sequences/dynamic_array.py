@@ -4,6 +4,7 @@ import ctypes
 
 class DynamicArray:
     """DYNAMIC ARRAY CLASS (Similar to Python List)"""
+
     def __init__(self):
         self.actual_element = 0
         self.capacity = 1
@@ -22,7 +23,7 @@ class DynamicArray:
     def append(self, ele):
         """Add new element of the array"""
         if self.actual_element == self.capacity:
-            self._resize(2*self.capacity)
+            self._resize(2 * self.capacity)
 
         self.arr[self.actual_element] = ele
         self.actual_element += 1

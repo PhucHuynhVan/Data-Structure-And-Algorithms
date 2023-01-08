@@ -15,12 +15,12 @@ def string_compression_func(string: str) -> str:
     i = 1
     while i < length:
 
-        if string[i] == string[i-1]:
+        if string[i] == string[i - 1]:
             count += 1
         else:
-            compressed_str = compressed_str + string[i-1] + str(count)
+            compressed_str = compressed_str + string[i - 1] + str(count)
             count = 1
         i += 1
 
-    compressed_str = compressed_str + string[i-1] + str(count)
+    compressed_str = compressed_str + string[i - 1] + str(count)
     return compressed_str
