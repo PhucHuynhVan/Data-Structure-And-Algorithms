@@ -1,6 +1,6 @@
 """Nodes and References Implementation of a Tree"""
-from typing import Type
 from stacks_queues_deques.stack import Stack
+from stacks_queues_deques.queue import Queue
 # pylint: disable=too-few-public-methods
 
 
@@ -46,16 +46,35 @@ class BinaryTree:
         return self.val
 
 
-def binary_tree_traversal(tree: BinaryTree) -> Type[Stack]:
-    """Traversal the Binary Tree"""
-    result = Stack()
+def binary_tree_depth_first_value_traversal(tree: BinaryTree) -> list:
+    """Traversal the Binary Tree Depth First"""
+    if not tree:
+        return []
+    result = []
     stacks = Stack()
     stacks.push(tree)
     while stacks.size() > 0:
         current = stacks.pop()
-        result.push(current.val)
+        result.append(current.val)
         if current.right:
             stacks.push(current.right)
         if current.left:
             stacks.push(current.left)
+    return result
+
+
+def binary_tree_breadth_first_value_traversal(tree: BinaryTree) -> list:
+    """Traversal the Binary Tree Depth First"""
+    if not tree:
+        return []
+    result = []
+    queues = Queue()
+    queues.enqueue(tree)
+    while queues.size() > 0:
+        current = queues.dequeue()
+        result.append(current.val)
+        if current.left:
+            queues.enqueue(current.left)
+        if current.right:
+            queues.enqueue(current.right)
     return result
