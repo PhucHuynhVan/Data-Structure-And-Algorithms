@@ -1,4 +1,5 @@
 """Nodes and References Implementation of a Tree"""
+from typing import Any
 from stacks_queues_deques.stack import Stack
 from stacks_queues_deques.queue import Queue
 # pylint: disable=too-few-public-methods
@@ -78,3 +79,20 @@ def binary_tree_breadth_first_value_traversal(tree: BinaryTree) -> list:
         if current.right:
             queues.enqueue(current.right)
     return result
+
+
+def is_binary_tree_includes(tree: BinaryTree, target: Any) -> bool:
+    """Check the Binary Tree includes the target"""
+    if tree is None:
+        return False
+    queue = Queue()
+    queue.enqueue(tree)
+    while queue.size() > 0:
+        current_node = queue.dequeue()
+        if current_node.val == target:
+            return True
+        if current_node.left:
+            queue.enqueue(current_node.left)
+        if current_node.right:
+            queue.enqueue(current_node.right)
+    return False
