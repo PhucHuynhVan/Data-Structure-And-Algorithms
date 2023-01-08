@@ -96,3 +96,27 @@ def is_binary_tree_includes(tree: BinaryTree, target: Any) -> bool:
         if current_node.right:
             queue.enqueue(current_node.right)
     return False
+
+
+def sum_binary_tree_iterative(tree: BinaryTree) -> int:
+    """Sum of entire nodes in Binary Tree use iterative"""
+    if tree is None:
+        return 0
+    queues = Queue()
+    total = 0
+    queues.enqueue(tree)
+    while queues.size() > 0:
+        current = queues.dequeue()
+        total += current.val
+        if current.left:
+            queues.enqueue(current.left)
+        if current.right:
+            queues.enqueue(current.right)
+    return total
+
+
+def sum_binary_tree_recursion(tree: BinaryTree) -> int:
+    """Sum of entire nodes in Binary Tree use recursion"""
+    if tree is None:
+        return 0
+    return tree.val + sum_binary_tree_recursion(tree.left) + sum_binary_tree_iterative(tree.right)
