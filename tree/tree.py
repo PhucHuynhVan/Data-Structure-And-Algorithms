@@ -154,3 +154,16 @@ def binary_tree_min_value_recursion(tree: BinaryTree) -> Any:
     left_min = binary_tree_min_value_recursion(tree.left)
     right_min = binary_tree_min_value_recursion(tree.right)
     return min(tree.val, left_min, right_min)
+
+
+def max_root_to_leaf_path_recursion(tree: BinaryTree) -> Any:
+    """Find max path value in Binary Tree use recursion"""
+    if tree is None:
+        return float("-inf")
+    if (tree.left is None) and (tree.right is None):
+        return tree.val
+    max_child = max(
+        max_root_to_leaf_path_recursion(tree.left),
+        max_root_to_leaf_path_recursion(tree.right),
+    )
+    return tree.val + max_child

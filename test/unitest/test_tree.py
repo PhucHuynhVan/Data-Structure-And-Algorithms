@@ -1,5 +1,4 @@
 import pytest
-from typing import Any
 from tree.tree import (
     binary_tree_depth_first_value_traversal,
     binary_tree_breadth_first_value_traversal,
@@ -8,6 +7,7 @@ from tree.tree import (
     sum_binary_tree_recursion,
     binary_tree_min_value_iterative,
     binary_tree_min_value_recursion,
+    max_root_to_leaf_path_recursion,
     BinaryTree,
 )
 
@@ -118,3 +118,23 @@ def test_binary_tree_min_value():
     result_recursion = binary_tree_min_value_recursion(a)
     # Assert
     assert result_iterative == result_recursion == 3
+
+
+def test_max_root_to_leaf_path_recursion():
+    # Arr
+    a = BinaryTree(5)
+    b = BinaryTree(11)
+    c = BinaryTree(3)
+    d = BinaryTree(4)
+    e = BinaryTree(2)
+    f = BinaryTree(12)
+
+    a.left = b
+    a.right = c
+    b.left = d
+    b.right = e
+    c.right = f
+    # Act
+    result_recursion = max_root_to_leaf_path_recursion(a)
+    # Assert
+    assert result_recursion == 20
