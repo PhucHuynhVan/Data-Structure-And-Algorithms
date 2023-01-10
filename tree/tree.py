@@ -129,7 +129,7 @@ def sum_binary_tree_recursion(tree: BinaryTree) -> int:
     )
 
 
-def binary_tree_min_value_iterative(tree: BinaryTree) -> float | int | Any:
+def binary_tree_min_value_iterative(tree: BinaryTree) -> Any[float, int]:
     """Find min value in Binary Tree use iterative"""
     if not tree:
         return math.inf
@@ -147,7 +147,7 @@ def binary_tree_min_value_iterative(tree: BinaryTree) -> float | int | Any:
     return smallest
 
 
-def binary_tree_min_value_recursion(tree: BinaryTree) -> float | int | Any:
+def binary_tree_min_value_recursion(tree: BinaryTree) -> Any[float, int]:
     """Find min value in Binary Tree use recursion"""
     if tree is None:
         return math.inf
