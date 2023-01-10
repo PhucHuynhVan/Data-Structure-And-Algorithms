@@ -5,6 +5,8 @@ from tree.tree import (
     is_binary_tree_includes,
     sum_binary_tree_iterative,
     sum_binary_tree_recursion,
+    binary_tree_min_value_iterative,
+    binary_tree_min_value_recursion,
     BinaryTree,
 )
 
@@ -94,3 +96,24 @@ def test_sum_binary_tree():
     result_recursion = sum_binary_tree_recursion(a)
     # Assert
     assert result_iterative == result_recursion == 21
+
+
+def test_binary_tree_min_value():
+    # Arr
+    a = BinaryTree(5)
+    b = BinaryTree(11)
+    c = BinaryTree(3)
+    d = BinaryTree(4)
+    e = BinaryTree(15)
+    f = BinaryTree(12)
+
+    a.left = b
+    a.right = c
+    b.left = d
+    b.right = e
+    c.right = f
+    # Act
+    result_iterative = binary_tree_min_value_iterative(a)
+    result_recursion = binary_tree_min_value_recursion(a)
+    # Assert
+    assert result_iterative == result_recursion == 3

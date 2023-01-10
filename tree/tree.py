@@ -1,4 +1,5 @@
 """Nodes and References Implementation of a Tree"""
+import math
 from typing import Any
 from stacks_queues_deques.stack import Stack
 from stacks_queues_deques.queue import Queue
@@ -126,3 +127,30 @@ def sum_binary_tree_recursion(tree: BinaryTree) -> int:
         + sum_binary_tree_recursion(tree.left)
         + sum_binary_tree_iterative(tree.right)
     )
+
+
+def binary_tree_min_value_iterative(tree: BinaryTree) -> float | int | Any:
+    """Find min value in Binary Tree use iterative"""
+    if not tree:
+        return math.inf
+    smallest = math.inf
+    stacks = Stack()
+    stacks.push(tree)
+    while stacks.size() > 0:
+        current = stacks.pop()
+        if current.val < smallest:
+            smallest = current.val
+        if current.right:
+            stacks.push(current.right)
+        if current.left:
+            stacks.push(current.left)
+    return smallest
+
+
+def binary_tree_min_value_recursion(tree: BinaryTree) -> float | int | Any:
+    """Find min value in Binary Tree use recursion"""
+    if tree is None:
+        return math.inf
+    left_min = binary_tree_min_value_recursion(tree.left)
+    right_min = binary_tree_min_value_recursion(tree.right)
+    return min(tree.val, left_min, right_min)
