@@ -1,4 +1,4 @@
-"""Using dynamic programming"""
+"""Dynamic programming"""
 
 
 def fib_memoization(number: int) -> int:
